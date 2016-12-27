@@ -2,6 +2,15 @@
 
 This project allows to run standalone [Nailgun](https://github.com/openstack/fuel-web) in Docker.
 
+Nailgun is run in development mode
+
+```
+manage.py run --fake-tasks \
+              --fake-tasks-tick-count=80 \
+              --fake-tasks-tick-interval=1 \
+              --authentication-method="none"
+```
+
 ## Run Nailgun
 
 Build image
@@ -16,6 +25,8 @@ Run container
 ```
 docker run --name nailgun -d nailgun-docker
 ```
+
+Nailgun startup takes some time. Wait for 30 seconds before using container.
 
 ## Use Nailgun
 
@@ -37,3 +48,5 @@ docker exec nailgun fuel node
   * Support older versions
 
 ## Known issues
+
+  * No Fuel UI

@@ -11,10 +11,6 @@ RUN yum -y install supervisor \
                    fuel-nailgun \
                    python-fuelclient
 
-# Disable Keystone auth
-RUN sed -i 's/AUTHENTICATION_METHOD:.*/AUTHENTICATION_METHOD:\ \"none\"/' \
-            /etc/nailgun/settings.yaml
-
 # Supervisor configuration
 COPY postgresql.ini /etc/supervisord.d/
 COPY nailgun.ini /etc/supervisord.d/
