@@ -17,13 +17,13 @@ Build image
 
 ```
 cd nailgun-docker
-docker build -t nailgun-docker 9.1
+docker build -t nailgun:9.1 9.1
 ```
 
 Run container
 
 ```
-docker run --name nailgun -d nailgun-docker
+docker run --name nailgun -d nailgun:9.1
 ```
 
 Nailgun startup takes some time. Wait for 30 seconds before using container.
